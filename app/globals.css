@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+/*
+  Tokens sourced directly from the NYC Digital Design System
+  (designsystem.nyc.gov/brand/color.html, /brand/typography.html).
+  This system is light-only — no dark theme is published, so none is added here.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --nyc-black: #000000;
+  --nyc-white: #ffffff;
+
+  --blue-40: #103fef; /* primary action */
+  --blue-10: #050560; /* hover / pressed */
+  --blue-70: #70baff; /* info tint */
+  --blue-80: #b5dbff; /* light interactive */
+
+  --gray-20: #333333;
+  --gray-30: #555555;
+  --gray-40: #777777;
+  --gray-70: #cccccc;
+  --gray-80: #dddddd;
+  --gray-90: #eeeeee;
+
+  --green-40: #00b703; /* success */
+  --yellow-40: #ffb320; /* caution */
+  --red-40: #ec131e; /* error / emergency */
+
+  --focus-ring: var(--blue-40);
+
+  --font-display: var(--font-clash), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-noto), "Helvetica Neue", Arial, sans-serif;
+
+  /* Card treatment used across service tiles, quick links, and program cards */
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.07);
+  --card-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.12), 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--nyc-white);
+  color: var(--nyc-black);
+  font-family: var(--font-body);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px dotted var(--focus-ring);
+  outline-offset: 3px;
 }
