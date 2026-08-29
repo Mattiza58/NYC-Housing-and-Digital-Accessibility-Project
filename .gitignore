@@ -44,3 +44,5 @@ next-env.d.ts
 # ai stuff
 AGENTS.md
 CLAUDE.md
+.claude/
+
